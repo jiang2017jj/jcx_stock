@@ -22,4 +22,4 @@ RUN pip3 --no-cache-dir install -r /stock/requirements.txt -i https://mirrors.al
 # 开放MySQL的访问端口。
 EXPOSE 3306
 
-CMD gunicorn clover:app -c gconfig.py && nginx -c /stock/nginx.conf -g "daemon off;"
+CMD gunicorn stock:app -c gconfig.py && nginx -c /stock/nginx.conf -g "daemon off;"
