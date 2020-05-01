@@ -9,12 +9,12 @@ RUN echo "http://mirrors.ustc.edu.cn/alpine/v3.10/main/" > /etc/apk/repositories
     && apk update --no-cache \
     && apk upgrade --no-cache \
     && apk add build-base mariadb-dev \
-    && apk add nodejs \
-    && apk add npm \
+#    && apk add nodejs \
+#    && apk add npm \
     && apk add nginx
 
 # 编译前端资源
-RUN npm install && npm run generate
+#RUN npm install && npm run generate
 
 # 安装python依赖
 RUN pip3 --no-cache-dir install -r /stock/requirements.txt -i https://mirrors.aliyun.com/pypi/simple
