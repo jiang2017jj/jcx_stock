@@ -12,17 +12,6 @@ from app.tasks.task_jobs import job_1
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-TEAM_DICT = {
-    "3": "基础服务",
-    "5": "财商基金",
-    "4": "保险服务",
-    "6": "保险供应链",
-    "7": "数据平台",
-    "9": "系统运维",
-    "44": "大前端",
-    "8": "实例项目",
-    "29": "设计"
-}
 
 class Config:
     DEBUG=True
@@ -30,20 +19,20 @@ class Config:
     SECRET_KEY = 'jcl_secret_key'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
-    FLASKY_MAIL_SUBJECT_PREFIX = 'qa@xiaobangtouzi.com'
+    FLASKY_MAIL_SUBJECT_PREFIX = '12131@qq.com'
     # FLASKY_MAIL_SENDER = 'jcl_send'
     # FLASKY_ADMIN = 'jcl_admin'
-    LDAP_HOST = "ldaps://ad01.xiaobang.xyz"
+    LDAP_HOST = ""
     LDAP_ADMIN = {
-        "user": "wechat_sync@xiaobang.xyz",
-        "pwd": "JWPRj7pa^J#3NLZ3"
+        "user": "",
+        "pwd": ""
     }
     WECHAT_CONFIG = {
-        "corp_id": "wwf1143b4d1547c208",
-        "corp_secret": "IyrzR40w1pK2nVWEYIxWCQ9LkOWw7Wrcf45PTEubbV4"
+        "corp_id": "",
+        "corp_secret": ""
     }
-    GIT_SERVER="http://code.xiaobangtouzi.com/"
-    JIRA_SERVER="http://jira.xiaobangtouzi.com/"
+    GIT_SERVER=""
+    JIRA_SERVER=""
 
     #新增一个APS的API的开关
     SCHEDULER_API_ENABLED = True
@@ -91,8 +80,8 @@ class DevelopmentConfig(Config):
     MAIL_USE_TLS = False
     # MAIL_USERNAME = 'qa@xiaobangtouzi.com'
     # MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
-    MAIL_USERNAME = 'jiangchenglong@xiaobangtouzi.com'
-    MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
+    MAIL_USERNAME = '1558657829@qq.com'
+    MAIL_PASSWORD = ''
     SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://root:123456a@127.0.0.1:3306/quality?charset=utf8"
     SQLALCHEMY_POOL_RECYCLE = 3599
     SQLALCHEMY_MAX_OVERFLOW = 100
@@ -129,15 +118,13 @@ class TestingConfig(Config):
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USE_TLS = False
-    # MAIL_USERNAME = 'qa@xiaobangtouzi.com'
-    # MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
-    MAIL_USERNAME = 'jiangchenglong@xiaobangtouzi.com'
-    MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
+    MAIL_USERNAME = '1122@qq.com'
+    MAIL_PASSWORD = ''
     QUALITY_DATABASE = {
         'host': '172.16.0.115',
         'port': 3306,
         'user': 'quality_qa',
-        'pswd': '#UE3a=jBaNnDqtGt',
+        'pswd': '',
         'db':'quality',
         'charset': 'utf8'
     }
@@ -189,8 +176,8 @@ class ProductionConfig(Config):
     CATPCHA = {
       'host': '172.16.16.49',
       'port': 3306,
-      'user': 'user_center_read',
-      'password': 'V@C^jJfdJe9FLhtV',
+      'user': '',
+      'password': '',
       'database': 'user_center',
       'charset': 'utf8'
     }
