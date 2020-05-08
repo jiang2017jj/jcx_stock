@@ -1,13 +1,7 @@
 .idea/
-
 log/
 __pycache__/
 migrations/
-node_modules/
-static/img/qrcode/
-node_modules/
-fe/.nuxt/
-
 *.pyc
 *.log
 *.pid
