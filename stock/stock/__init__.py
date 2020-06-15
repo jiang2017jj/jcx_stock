@@ -3,9 +3,10 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
-
-import config
-
+import atexit
+import platform
+from config import config
+from stock.tasks.task_init import quality_apscheduler
 
 blueprints = [
     # 'clover.suite:suite',
@@ -23,7 +24,7 @@ login_manager.login_view = "login"
 login_manager.login_message = u"请登录访问质量平台"
 
 
-def create_app():
+def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(config)
     app.app_context().push()
@@ -50,7 +51,6 @@ def create_app():
 # 解决方法有2种，都可以：
 # 1.debug改为false,已经验证，可行；
 # 2.使用文件锁,网上找到锁的代码，可行；
-
 def scheduler_init(app):
     if platform.system() != 'Windows':
         fcntl = __import__("fcntl")
