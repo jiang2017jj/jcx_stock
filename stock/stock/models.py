@@ -4,9 +4,9 @@
 @author:Jiang ChengLong
 @file:models.py
 @time:2020-05-08 13:44:58
-
 """
-from app import db
+
+from stock import db
 
 class BaseModel(db.Model):
     __abstract__ = True
