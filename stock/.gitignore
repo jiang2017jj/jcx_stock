@@ -1,6 +1,6 @@
 # IntelliJ project files
 .idea/
-*.iml
+.iml
 out
 gen
 
@@ -9,12 +9,12 @@ gen
 
 # Python
 # Byte-compiled / optimized / DLL files
-*.py[cod]
+.py[cod]
 *$py.class
 __pycache__/
-*.pyc
+.pyc
 
-*.DS_Store
+.DS_Store
 
 # 虚拟环境
 # Environments
@@ -27,7 +27,7 @@ venv.bak/
 venv/
 .vscode
 
-*.log
+.log
 log/
 
 migrations/
