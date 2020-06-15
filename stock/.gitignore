@@ -14,7 +14,7 @@ gen
 __pycache__/
 .pyc
 
-.DS_Store
+*.DS_Store
 
 # 虚拟环境
 # Environments
