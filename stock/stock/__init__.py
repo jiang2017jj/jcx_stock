@@ -21,7 +21,7 @@ db = SQLAlchemy(use_native_unicode='utf8')
 login_manager = LoginManager()
 login_manager.session_protection = "strong"
 login_manager.login_view = "login"
-login_manager.login_message = u"请登录访问质量平台"
+login_manager.login_message = u"请登录stock平台"
 
 
 def create_app(config_name):
