@@ -110,20 +110,20 @@ class DevelopmentConfig(Config):
     }
 
     # 邮箱配置
-    FLASKY_MAIL_SENDER = 'jcl'
-    FLASKY_ADMIN = 'jcl_admin'
-    MAIL_SERVER = 'smtp.exmail.qq.com'
-    MAIL_PORT = 465
-    MAIL_USE_SSL = True
-    MAIL_USE_TLS = False
-    MAIL_USERNAME = 'jiangchenglong@xiaobangtouzi.com'
-    MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
-    # EMAIL = {
-    #     'sender': '12345678@qq.com',
-    #     'receiver': ['12345678@qq.com'],
-    #     'password': '',
-    #     'smtp_host': 'smtp.qq.com',
-    # }
+    # FLASKY_MAIL_SENDER = 'jcl'
+    # FLASKY_ADMIN = 'jcl_admin'
+    # MAIL_SERVER = 'smtp.exmail.qq.com'
+    # MAIL_PORT = 465
+    # MAIL_USE_SSL = True
+    # MAIL_USE_TLS = False
+    # MAIL_USERNAME = 'jiangchenglong@xiaobangtouzi.com'
+    # MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
+    EMAIL = {
+        'sender': '12345678@qq.com',
+        'receiver': ['12345678@qq.com'],
+        'password': '',
+        'smtp_host': 'smtp.qq.com',
+    }
 
     NOTIFY = {
         # 通知的触发事件，成功时通知还是失败时通知
@@ -219,12 +219,12 @@ class TestingConfig(Config):
     }
 
     # 邮箱配置
-    FLASKY_MAIL_SENDER = 'jcl'
-    FLASKY_ADMIN = 'jcl_admin'
     MAIL_SERVER = 'smtp.exmail.qq.com'
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USE_TLS = False
+    FLASKY_MAIL_SENDER = 'jcl'
+    FLASKY_ADMIN = 'jcl_admin'
     MAIL_USERNAME = 'jiangchenglong@xiaobangtouzi.com'
     MAIL_PASSWORD = '3fEJS7CcrxQSGALK'
     # EMAIL = {
