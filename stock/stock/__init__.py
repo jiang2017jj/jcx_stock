@@ -1,3 +1,7 @@
+# 导入的Flask类，这个类的实例化的对象就是我们的WSGI应用程序
+import logging
+from logging.config import fileConfig
+
 from flask import Flask
 from flask_login import LoginManager
 from flask_mail import Mail
@@ -5,6 +9,8 @@ from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 import atexit
 import platform
+
+import logconfig
 from config import config
 from stock.tasks.task_init import quality_apscheduler
 
@@ -25,6 +31,7 @@ login_manager.login_message = u"请登录stock平台"
 
 
 def create_app(config_name):
+    # app就是一个WSGI应用程序，单一模块第一个参数为__name__，此处需要后续考察下是否正确
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(config)
     app.app_context().push()
@@ -87,6 +94,11 @@ def scheduler_init(app):
                 pass
 
         atexit.register(_unlock_file)
+
+
+
+# 加载日志文件的时候应该尽可能的早，避免在调用过一次app.logger之后才加载日志配置，所以最好在app被创建之前就加载日志配置文件。
+logging.config.fileConfig(logconfig.logger_dict)
 
 
 # 本地开发使用

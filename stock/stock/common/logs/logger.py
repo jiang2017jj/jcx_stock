@@ -7,7 +7,9 @@
 """
 
 """
-# 用于记录任务执行的信息。
+用于记录任务执行的信息。
+由于celery的运行是独立的，在flask中定义的logger对象的配置在celery的程序中是失效的，必须使用get_task_logger创建logger;
+指定celery日志的输出等级，通过启动时用--loglevel参数来指定；
 """
 
 # import enum
