@@ -3,6 +3,8 @@
 .iml
 out
 gen
+/logs
+.DS_Store
 
 # C extensions
 *.so
